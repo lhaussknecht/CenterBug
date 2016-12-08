@@ -18,20 +18,20 @@ namespace CenterBug
 
     public class DummyViewModel
     {
-        public IList<DummyItems> ListViewItems { get; set; }
+        public IList<DummyItem> ListViewItems { get; set; }
 
         public DummyViewModel()
         {
-            ListViewItems = new List<DummyItems>();
+            ListViewItems = new List<DummyItem>();
             for (int i = 0; i < 50; i++)
             {
-                ListViewItems.Add(new DummyItems() { PropA = $"A {i}" });
+                ListViewItems.Add(new DummyItem() { PropA = $"A {i}" });
             }
 
         }
     }
 
-    public class DummyItems
+    public class DummyItem
     {
         public string PropA { get; set; }
     }
