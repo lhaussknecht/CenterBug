@@ -21,25 +21,25 @@ namespace CenterBug
     public class DummyViewModel
     {
         public ICommand AddMoreCommand { get; set; }
-        public ObservableCollection<DummyItems> ListViewItems { get; set; }
+        public ObservableCollection<DummyItem> ListViewItems { get; set; }
 
         public DummyViewModel()
         {
-            ListViewItems = new ObservableCollection<DummyItems>();
+            ListViewItems = new ObservableCollection<DummyItem>();
             for (int i = 0; i < 500; i++)
             {
-                ListViewItems.Add(new DummyItems() { PropA = $"A {i}" });
+                ListViewItems.Add(new DummyItem() { PropA = $"A {i}" });
             }
 
             AddMoreCommand = new Command(() =>
             {
-                ListViewItems.Insert(0, new DummyItems() { PropA = "New!" });
+                ListViewItems.Insert(0, new DummyItem() { PropA = "New!" });
             });
 
         }
     }
 
-    public class DummyItems
+    public class DummyItem
     {
         public string PropA { get; set; }
     }
