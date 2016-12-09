@@ -3,20 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CenterBug"
              x:Class="CenterBug.MainPage">
- 
 
-  <ListView  ItemsSource="{Binding ListViewItems}">
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <Frame>
-          <StackLayout>
-             <Label HorizontalTextAlignment="Center" Text="{Binding PropA}"></Label>
-            </StackLayout>   
-          </Frame>
+  <StackLayout>
+    <Button Command="{Binding AddMoreCommand}" Text="Add more!"></Button>
+    <ListView  ItemsSource="{Binding ListViewItems}"  RowHeight ="100">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Frame >
+              <StackLayout>
+                <Label HorizontalTextAlignment="Center" Text="{Binding PropA}"></Label>
+                <Label HorizontalTextAlignment="Center" Text="{Binding PropA}"></Label>
+                <Label HorizontalTextAlignment="Center" Text="{Binding PropA}"></Label>
+                <Label HorizontalTextAlignment="Center" Text="{Binding PropA}"></Label>
+              </StackLayout>
+            </Frame>
           </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-  </ListView>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+
 
 </ContentPage>

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
+using System.Collections.ObjectModel;
 
 namespace CenterBug
 {
@@ -18,15 +20,21 @@ namespace CenterBug
 
     public class DummyViewModel
     {
-        public IList<DummyItems> ListViewItems { get; set; }
+        public ICommand AddMoreCommand { get; set; }
+        public ObservableCollection<DummyItems> ListViewItems { get; set; }
 
         public DummyViewModel()
         {
-            ListViewItems = new List<DummyItems>();
-            for (int i = 0; i < 50; i++)
+            ListViewItems = new ObservableCollection<DummyItems>();
+            for (int i = 0; i < 500; i++)
             {
                 ListViewItems.Add(new DummyItems() { PropA = $"A {i}" });
             }
+
+            AddMoreCommand = new Command(() =>
+            {
+                ListViewItems.Insert(0, new DummyItems() { PropA = "New!" });
+            });
 
         }
     }
